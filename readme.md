@@ -14,5 +14,5 @@ Modulos necesarios para la correcta ejecución del proyecto:
 
 #En carpeta client:
 
-# ng add @angular/material
-# npm i @angular/flex-layout
+    # ng add @angular/material
+    # npm i @angular/flex-layout
