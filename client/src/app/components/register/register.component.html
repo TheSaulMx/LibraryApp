@@ -1,0 +1,61 @@
+<div class="registerContainer" fxLayoutAlign="center ">
+  <mat-card class="box" >
+
+    <mat-card-content>
+
+      <form class="registerForm" [formGroup]="registerForm" (ngSubmit)="submit()" fxLayout="column">
+
+        <mat-card-header fxLayoutAlign="center">
+          <mat-card-title>Registrarse</mat-card-title>
+        </mat-card-header>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <mat-icon matPrefix>perm_identity</mat-icon>
+          <input matInput formControlName="name" name="name" required minlength="3"maxlength="20" placeholder="Nombre">
+          <mat-hint *ngIf="this.registerForm.get('name')?.errors?.['required']">Ingrese su nombre</mat-hint>
+
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Correo electrónico</mat-label>
+          <mat-icon matPrefix>mail_outline</mat-icon>
+          <input matInput formControlName="email" name="email" required maxlength="35" placeholder="Correo electrónico">
+
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <mat-icon matPrefix> remove_red_eye </mat-icon>
+          <input matInput formControlName="password" name="password" required type="password" minlength="8" maxlength="20" placeholder="Contraseña">
+
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Confirmar contraseña</mat-label>
+          <mat-icon matPrefix> remove_red_eye </mat-icon>
+          <input matInput formControlName="cpassword" name="cpassword" required type="password" minlength="8" maxlength="20" placeholder="Confirmar contraseña">
+
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Número celular</mat-label>
+          <span matPrefix >
+            <mat-icon matPrefix>phone</mat-icon>
+            <!-- +52 &nbsp;-->
+          </span>
+          <input matInput formControlName="tel" name="tel" required type="tel" minlength="10" maxlength="10" placeholder="555-555-1234">
+
+        </mat-form-field>
+
+        <button mat-raised-button type="submit">Entrar</button>
+
+        <a routerLink="/login" fxLayoutAlign="center ">Ya tengo cuenta</a>
+
+      </form>
+
+    </mat-card-content>
+
+  </mat-card>
+
+</div>

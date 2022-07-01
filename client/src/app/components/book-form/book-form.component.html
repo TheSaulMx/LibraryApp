@@ -1,0 +1,39 @@
+<mat-card fxLayoutAlign="center">
+
+  <form fxLayout="column">
+    <mat-form-field appearance="fill">
+      <mat-label>Titulo</mat-label>
+      <input type="text" name="title" [(ngModel)]="book.title" matInput placeholder="Titulo">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Sinopsis</mat-label>
+      <textarea type="text" name="synopsis" [(ngModel)]="book.synopsis" matInput placeholder="Sinopsis"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Portada (URL)</mat-label>
+      <input type="url" name="cover" [(ngModel)]="book.cover" matInput placeholder="Portada">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Autor</mat-label>
+      <input type="text" name="autor" [(ngModel)]="book.autor" matInput  placeholder="Autor">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Categoria</mat-label>
+      <input type="text" name="category" [(ngModel)]="book.category" matInput placeholder="Categoria">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Editorial</mat-label>
+      <input type="text" name="editorial" [(ngModel)]="book.editorial" matInput placeholder="Editorial">
+    </mat-form-field>
+
+     <button mat-button (click)="saveBook()" style="background: rgb(50, 245, 50);">
+        Guardar
+     </button>
+  </form>
+
+</mat-card>

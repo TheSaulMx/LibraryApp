@@ -1,0 +1,26 @@
+.box{
+  margin: 50px 0;
+  box-shadow: -3px 3px 2px gray;
+  padding: 0;
+  border-radius: 4px;
+  width: 25rem;
+}
+.registerForm{
+  align-self: center;
+  padding: 0 40px 0 20px;
+  margin: 0;
+}
+.registerForm mat-card-title{
+  font-size: large;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: cornflowerblue;
+  margin: 20px 0;
+}
+.registerForm button{
+  margin-left: 60px;
+  margin-right: 60px;
+  background-color: cornflowerblue;
+}
+.registerForm a{
+  margin: 15px 0;
+}

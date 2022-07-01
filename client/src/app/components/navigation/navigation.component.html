@@ -1,0 +1,54 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" >
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1><a class="example-app-name" routerLink="/">Biblioteca</a></h1>
+    <span class="example-spacer"></span>
+    <a class="toolbar-items">FAQ</a>
+    <a class="toolbar-items" routerLink="/login">SignIn/LogIn</a>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-nav-list>
+        <button mat-button class="add-book-button" routerLink="/books-table" style="background: gainsboro;">
+          <mat-icon> add_circle_outline </mat-icon>
+          <h1>Agregar libro</h1>
+        </button>
+        <mat-divider></mat-divider>
+        <div  *ngFor="let nav of sidenavItems">
+          <a mat-list-item routerLink="{{nav.link}}"> <mat-icon>{{nav.icon}}</mat-icon> &nbsp; {{nav.label}}</a>
+          <mat-divider></mat-divider>
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+      <!-- <p *ngFor="let content of fillerContent">{{content}}</p> -->
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+
+<!-- <mat-toolbar fxLayout="row" color="primary">
+    <span fxFlex><a routerLink="/">Libreria</a></span>
+
+    <button mat-button *ngFor="let item of menuItems" fxHide.xs>
+        <mat-icon class="mr">{{item.icon}}</mat-icon>
+        <a routerLink="{{item.link}}">{{item.label}}</a>
+    </button>
+    <button mat-icon-button [matMenuTriggerFor]="dropMenu" fxHide fxShow.xs>
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #dropMenu="matMenu">
+        <ng-container *ngFor="let item of menuItems">
+            <button mat-menu-item>
+                <mat-icon class="mr">{{item.icon}}</mat-icon>
+                <a routerLink="{{item.link}}">{{item.label}}</a>
+            </button>
+            <mat-divider></mat-divider>
+        </ng-container>
+    </mat-menu>
+</mat-toolbar> -->

@@ -1,0 +1,44 @@
+<div class="form-container" fxFlex="95" fxLayoutAlign="center center">
+  <mat-card class="box" >
+
+    <mat-card-content fxLayout="row">
+
+      <form class="form" [formGroup]="loginForm" (ngSubmit)="submit()" fxLayout="column">
+
+        <mat-card-header fxLayoutAlign="center">
+          <mat-card-title>Iniciar sesión</mat-card-title>
+        </mat-card-header>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Correo electrónico</mat-label>
+          <mat-icon matPrefix>mail_outline</mat-icon>
+          <input matInput formControlName="email" name="email" required placeholder="Correo electrónico">
+          <mat-hint *ngIf="this.loginForm.get('email')?.errors?.['email']">Debes ingresar un correo valido</mat-hint>
+
+
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <mat-icon matPrefix> remove_red_eye </mat-icon>
+          <input matInput formControlName="password" name="password" required type="password" placeholder="Contraseña">
+          <mat-hint *ngIf="this.loginForm.get('password')?.errors?.['minLength']">Mínimo 8 caracteres</mat-hint>
+          <mat-hint *ngIf="this.loginForm.get('password')?.errors?.['maxLength']">Máximo 20 caracteres</mat-hint>
+        </mat-form-field>
+
+        <button mat-raised-button type="submit">Entrar</button>
+
+        <a routerLink="/" fxLayoutAlign="center">Olvidé mi contraseña</a>
+        <a routerLink="/register" fxLayoutAlign="center">No tengo cuenta</a>
+
+      </form>
+
+      <mat-card class="image-form">
+        <img mat-card-image src="https://www.comunidadbaratz.com/wp-content/uploads/Las-bibliotecas-publicas-no-paran-de-evolucionar-para-ofrecer-un-mejor-servicio-basado-en-la-necesidad-y-en-la-utilidad.jpg">
+      </mat-card>
+
+    </mat-card-content>
+
+  </mat-card>
+
+</div>
