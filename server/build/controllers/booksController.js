@@ -10,9 +10,21 @@ class BooksController {
             const bookModel = req.body;
             console.warn(bookModel); //investigar funcionamiento
             const createBook = await database_1.default.query(`call SP_InsertBook( '${bookModel.title}', '${bookModel.synopsis}', '${bookModel.cover}', '${bookModel.autor}')`);
+            // const createBook = await database.query(`insert into books(title, synopsis, cover, autor)
+            // values ('${bookModel.title}', '${bookModel.synopsis}', '${bookModel.cover}', '${bookModel.autor}');` );
+            const bookRes = {
+                id: 0,
+                title: bookModel.title,
+                cover: bookModel.cover,
+                autor: bookModel.autor,
+                synopsis: bookModel.synopsis,
+                category: bookModel.category,
+                editorial: bookModel.editorial,
+                created_at: new Date
+            };
             const resp = {
                 sucess: true,
-                entity: createBook,
+                entity: bookRes,
                 mensajeError: "N/A",
                 mensajeExito: "¡Libro guardado!"
             };
