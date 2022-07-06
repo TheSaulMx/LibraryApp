@@ -1,7 +1,7 @@
-// a {
-//   text-decoration: none;
-//   color: white;
-// }
+.example-toolbar {
+ background: #351431;
+}
+
 .example-spacer {
   flex: 1 1 auto;
 }
@@ -24,7 +24,7 @@
 
 a.toolbar-items {
   text-decoration: none;
-  color: beige;
+  color: #D1D3C4;
   margin: 0 5px;
   font-size: medium;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -32,7 +32,7 @@ a.toolbar-items {
 
 a.example-app-name {
   text-decoration: none;
-  color: beige;
+  color: #D1D3C4;
   margin-left: 8px;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
