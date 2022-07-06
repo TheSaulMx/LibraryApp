@@ -3,6 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { Book } from 'src/app/models/book';
 import { BooksService } from 'src/app/services/books.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-book-form',
@@ -11,7 +12,13 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class BookFormComponent implements OnInit {
 
-  constructor(private booksSerevice: BooksService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private booksSerevice: BooksService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private window: MatDialogRef<BookFormComponent>)
+    {
+
+     }
 
   book: Book = {
     title: '',
@@ -46,5 +53,9 @@ export class BookFormComponent implements OnInit {
         console.info('Libro guardado!')
       }
     })
+  }
+
+  closeWindow(status: boolean) {
+    this.window.close(status)
   }
 }

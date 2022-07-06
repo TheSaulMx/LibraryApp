@@ -1,24 +1,32 @@
+<mat-toolbar class="toolbarModal">
+  <h2>Agregar libro</h2>
+  <span class="example-spacer"></span>
+  <button mat-icon-button (click)="closeWindow(false)">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-toolbar>
+
 <mat-card fxLayoutAlign="center">
 
   <form fxLayout="column">
     <mat-form-field appearance="fill">
       <mat-label>Titulo</mat-label>
-      <input type="text" name="title" [(ngModel)]="book.title" matInput placeholder="Titulo">
+      <input type="text" name="title" [(ngModel)]="book.title" matInput autocomplete="off" placeholder="Titulo">
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Sinopsis</mat-label>
-      <textarea type="text" name="synopsis" [(ngModel)]="book.synopsis" matInput placeholder="Sinopsis"></textarea>
+      <textarea type="text" name="synopsis" [(ngModel)]="book.synopsis" matInput autocomplete="off" placeholder="Sinopsis"></textarea>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Portada (URL)</mat-label>
-      <input type="url" name="cover" [(ngModel)]="book.cover" matInput placeholder="Portada">
+      <input type="url" name="cover" [(ngModel)]="book.cover" matInput autocomplete="off" placeholder="Portada">
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Autor</mat-label>
-      <input type="text" name="autor" [(ngModel)]="book.autor" matInput  placeholder="Autor">
+      <input type="text" name="autor" [(ngModel)]="book.autor" matInput autocomplete="off"  placeholder="Autor">
     </mat-form-field>
 
     <mat-form-field appearance="fill">
@@ -28,10 +36,10 @@
 
     <mat-form-field appearance="fill">
       <mat-label>Editorial</mat-label>
-      <input type="text" name="editorial" [(ngModel)]="book.editorial" matInput placeholder="Editorial">
+      <input type="text" name="editorial" [(ngModel)]="book.editorial" matInput autocomplete="off" placeholder="Editorial">
     </mat-form-field>
 
-     <button mat-button (click)="saveBook()" style="background: rgb(50, 245, 50);">
+     <button mat-button (click)="saveBook()" style="background: #BDC696;">
         Guardar
      </button>
   </form>
