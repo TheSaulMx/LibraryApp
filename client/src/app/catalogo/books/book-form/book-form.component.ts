@@ -44,7 +44,7 @@ export class BookFormComponent implements OnInit {
   saveBook(){
     this.booksSerevice.saveBook(this.book).subscribe({
       next: (data) => {
-        // this.router.navigate(['/books']);
+        this.closeWindow(true);
       },
       error: (err) => {
         console.log(err)

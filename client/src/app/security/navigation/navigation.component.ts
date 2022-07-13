@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 import { BooksService } from 'src/app/services/books.service';
 import { SideNavItem } from '../../models/sidenav-item';
 
-import { BookFormComponent } from '../book-form/book-form.component';
+import { BookFormComponent } from '../../catalogo/books/book-form/book-form.component';
 
 @Component({
   selector: 'app-navigation',

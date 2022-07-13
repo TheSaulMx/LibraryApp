@@ -42,7 +42,7 @@
             <button mat-button (click)="openDialog(element.title)" style="background: rgb(50, 245, 50)">
               <mat-icon> edit </mat-icon>
             </button>
-            <button mat-raised-button style="background: rgb(240, 50, 50);" (click)="openDialogDelete(element.title)">
+            <button mat-raised-button style="background: rgb(240, 50, 50);" (click)="confirmDialog(element.title, false)">
               <mat-icon> delete </mat-icon>
             </button>
           </td>
