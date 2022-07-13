@@ -21,15 +21,15 @@ import { MatTableModule } from '@angular/material/table';
 
 
 import { BooksService } from './services/books.service';
-import { BooksListComponent } from './components/books-list/books-list.component';
-import { BookFormComponent } from './components/book-form/book-form.component';
-import { NavigationComponent } from './components/navigation/navigation.component';
+import { BooksListComponent } from './catalogo/books/books-list/books-list.component';
+import { BookFormComponent } from './catalogo/books/book-form/book-form.component';
+import { NavigationComponent } from './security/navigation/navigation.component';
 import { MatDividerModule } from '@angular/material/divider';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './security/login/login.component';
+import { RegisterComponent } from './security/register/register.component';
 import { MatCommonModule } from '@angular/material/core';
 import { CommonModule } from '@angular/common';
-import { BooksTableComponent } from './components/books-table/books-table.component';
+import { BooksTableComponent } from './catalogo/books/books-table/books-table.component';
 import { DialogConfirmComponent } from './utilitys/dialog-confirm/dialog-confirm.component';
 
 
@@ -68,6 +68,7 @@ import { DialogConfirmComponent } from './utilitys/dialog-confirm/dialog-confirm
   providers: [
     BooksService
   ],
+  entryComponents: [DialogConfirmComponent],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
