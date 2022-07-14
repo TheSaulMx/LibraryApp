@@ -4,6 +4,7 @@ import cors from 'cors';
 
 import booksRoutes from './routes/booksRoutes';
 import indexRoutes from './routes/indexRoutes';
+import autoresRoutes from './routes/autoresRoutes';
 
 
 class Server {
@@ -27,6 +28,7 @@ class Server {
     routes() {
         this.app.use('/', indexRoutes);
         this.app.use('/api/books', booksRoutes);
+        this.app.use('/api/autores', autoresRoutes)
     }
 
     start() {
