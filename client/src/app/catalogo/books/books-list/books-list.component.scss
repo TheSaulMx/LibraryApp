@@ -1,15 +1,22 @@
-.main {
-  display: flex;
-  // flex-wrap: wrap;
-}
 .book-card {
+  display: table-caption;
   background: #775253;
   margin: 15px 5px 15px 0;
+  padding-bottom: 0;
+  height: 75vh;
 }
-img {
+.book-card img {
   height: 45vh;
   width: 40vh;
 }
-p {
+.book-card p {
   color: #D1D3C4;
+  text-align: justify;
+}
+.book-card button {
+  background: #BDC696;
+}
+.book-card mat-card-actions {
+  display: flex;
+  float: right;
 }
