@@ -1,0 +1,32 @@
+<main class="main" fxLayout="row wrap" fxFlex="90" fxFlexOffset="10">
+
+  <div *ngFor="let item of autores">
+    <mat-card class="book-card">
+      <mat-card-header>
+        <mat-card-title><p>{{item.autor_name}}</p></mat-card-title>
+        <mat-card-subtitle><p>Fecha de nacimiento: {{item.bord_date == '' ? 'Desconocido' : item.born_date}}</p></mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <img mat-card-image
+      [src]="item.cover == '' ? '/assets/no-image.jpg' : item.photo" alt="Portada del libro">
+      <div class="about">
+        <p >
+        {{item.about == '' ? 'Ingrese sinopsis' : item.about}}
+        </p>
+      </div>
+
+        <mat-card-actions>
+          <button mat-button routerLink="/books/{{item.autor_name}}">
+            <mat-icon> remove_red_eye </mat-icon>
+          </button>
+        </mat-card-actions>
+
+      </mat-card-content>
+
+    </mat-card>
+  </div>
+
+</main>
+
+

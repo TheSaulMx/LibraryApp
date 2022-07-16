@@ -1,0 +1,30 @@
+.book-card {
+  display: table-caption;
+  background: #775253;
+  margin: 15px 5px 15px 0;
+  padding: 0 5px;
+  height: 75vh;
+  width: 40vh;
+}
+.book-card img {
+  height: 45vh;
+  width: 40vh;
+  margin: 0 0;
+  border-radius: 2%;
+}
+.book-card p {
+  color: #D1D3C4;
+  text-align: justify;
+  word-wrap: break-word;
+}
+.about {
+  height: 55px;
+  overflow: hidden;
+}
+.book-card button {
+  background: #BDC696;
+}
+.book-card mat-card-actions {
+  display: flex;
+  float: right;
+}
