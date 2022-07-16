@@ -20,7 +20,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 
 
-import { BooksService } from './services/books.service';
+import { BooksService } from './services/books-services/books.service';
 import { BooksListComponent } from './catalogo/books/books-list/books-list.component';
 import { BookFormComponent } from './catalogo/books/book-form/book-form.component';
 import { NavigationComponent } from './security/navigation/navigation.component';
@@ -31,7 +31,9 @@ import { MatCommonModule } from '@angular/material/core';
 import { CommonModule } from '@angular/common';
 import { BooksTableComponent } from './catalogo/books/books-table/books-table.component';
 import { DialogConfirmComponent } from './utilitys/dialog-confirm/dialog-confirm.component';
-
+import { AutoresListComponent } from './catalogo/autores/autores-list/autores-list.component';
+import { AutoresService } from './services/autores-services/autores-services.service';
+import { AutoresFormComponent } from './catalogo/autores/autores-form/autores-form.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { DialogConfirmComponent } from './utilitys/dialog-confirm/dialog-confirm
     LoginComponent,
     RegisterComponent,
     BooksTableComponent,
-    DialogConfirmComponent
+    DialogConfirmComponent,
+    AutoresListComponent,
+    AutoresFormComponent
   ],
   imports: [
     HttpClientModule,
@@ -66,7 +70,8 @@ import { DialogConfirmComponent } from './utilitys/dialog-confirm/dialog-confirm
     MatTableModule,
   ],
   providers: [
-    BooksService
+    BooksService,
+    AutoresService
   ],
   entryComponents: [DialogConfirmComponent],
   bootstrap: [AppComponent],
