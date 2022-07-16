@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
-import { BooksService } from 'src/app/services/books.service';
+import { BooksService } from 'src/app/services/books-services/books.service';
 import { DialogConfirmComponent } from 'src/app/utilitys/dialog-confirm/dialog-confirm.component';
 import { BookFormComponent } from '../book-form/book-form.component';
 

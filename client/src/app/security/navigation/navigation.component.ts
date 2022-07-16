@@ -2,7 +2,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
-import { BooksService } from 'src/app/services/books.service';
+import { BooksService } from 'src/app/services/books-services/books.service';
 import { SideNavItem } from '../../models/sidenav-item';
 
 import { BookFormComponent } from '../../catalogo/books/book-form/book-form.component';
@@ -29,7 +29,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
     {
       label: 'Autores',
       icon: 'person',
-      link: ''
+      link: '/autores'
     }
   ];
 

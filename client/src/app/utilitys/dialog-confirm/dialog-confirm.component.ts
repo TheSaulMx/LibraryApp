@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Book } from 'src/app/models/book';
-import { BooksService } from 'src/app/services/books.service';
+import { BooksService } from 'src/app/services/books-services/books.service';
 
 @Component({
   selector: 'app-dialog-confirm',
