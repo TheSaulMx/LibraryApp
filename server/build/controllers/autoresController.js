@@ -36,13 +36,13 @@ class autoresController {
     }
     async viewAutores(req, res) {
         try {
-            const autorautor = await database_1.default.query(`call SP_SelectAutores()`);
+            const autorautor = await database_1.default.query(`SELECT * FROM Autores`);
             let autor = autorautor;
             const response = {
                 sucess: true,
                 mensajeExito: "autora de Autores",
                 mensajeError: "N/A",
-                entity: autorautor
+                entity: autor
             };
             res.send(response);
         }
@@ -60,15 +60,9 @@ class autoresController {
         try {
             const { autor_name } = req.params;
             const autor = await database_1.default.query(`call SP_SelectAutor('${autor_name}')`);
-            if (autor.error != ('${autor_name}')) { //No funciona la sentencia
-                res.send(autor.error);
-            }
-            else {
-                res.send(autor); // Sí se lee
-            }
+            res.send(autor);
         }
-        catch (error) {
-            res.json({ message: "No existe el libro" }); //Nunca se lee!
+        catch {
         }
     }
     async updateAutor() {

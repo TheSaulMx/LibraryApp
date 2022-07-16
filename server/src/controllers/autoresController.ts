@@ -43,14 +43,14 @@ class autoresController {
 
         try {
             
-            const autorautor = await database.query(`call SP_SelectAutores()`)
-            let autor = autorautor as Autor
+            const autorautor = await database.query(`SELECT * FROM Autores`);
+            let autor = autorautor as Autor[]
 
-            const response: Respuesta<Autor> = {
+            const response: Respuesta<Autor[]> = {
                 sucess: true,
                 mensajeExito: "autora de Autores",
                 mensajeError: "N/A",
-                entity: autorautor
+                entity: autor
             }
                 res.send(response)
         } catch (error) {
@@ -69,16 +69,13 @@ class autoresController {
 
         try {
             const { autor_name } = req.params;
+
             const autor = await database.query(`call SP_SelectAutor('${autor_name}')`);
 
-            if (autor.error != ('${autor_name}')) { //No funciona la sentencia
-                res.send(autor.error); 
-            } else {
-                res.send(autor); // Sí se lee
-            }
-           } catch (error) {
-               res.json({message: "No existe el libro"}); //Nunca se lee!
-           }
+            res.send(autor);
+        }catch {
+            
+        }
 
     }
 
